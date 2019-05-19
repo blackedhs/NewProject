@@ -17,10 +17,10 @@ namespace EnvioMails
             try
             {
                 CargarContactos();
-                foreach (var mail in ListaContactos)
+                foreach (var destino in ListaContactos)
                 {
-                    var m = new Mail(dato.Origen, dato.Clave, dato.Asunto, dato.Cuerpo, dato.Adjunto, mail, true);
-                    Proceso.EnviarMail(m);
+                    var m = new Mail(dato.Origen, dato.Clave, dato.Asunto, dato.Cuerpo, dato.Adjunto, destino);
+                    //Proceso.EnviarMail(m);
                 }
             }
             catch (Exception ex)
