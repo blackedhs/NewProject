@@ -1,0 +1,10 @@
+C:\Users\usuario\Desktop\Mail\EnvioMails\FormEnvioMails\bin\Debug\FormEnvioMails.exe.config
+C:\Users\usuario\Desktop\Mail\EnvioMails\FormEnvioMails\bin\Debug\FormEnvioMails.exe
+C:\Users\usuario\Desktop\Mail\EnvioMails\FormEnvioMails\bin\Debug\FormEnvioMails.pdb
+C:\Users\usuario\Desktop\Mail\EnvioMails\FormEnvioMails\obj\Debug\FormEnvioMails.csprojResolveAssemblyReference.cache
+C:\Users\usuario\Desktop\Mail\EnvioMails\FormEnvioMails\obj\Debug\FormEnvioMails.FormPrincipal.resources
+C:\Users\usuario\Desktop\Mail\EnvioMails\FormEnvioMails\obj\Debug\FormEnvioMails.Properties.Resources.resources
+C:\Users\usuario\Desktop\Mail\EnvioMails\FormEnvioMails\obj\Debug\FormEnvioMails.csproj.GenerateResource.Cache
+C:\Users\usuario\Desktop\Mail\EnvioMails\FormEnvioMails\obj\Debug\FormEnvioMails.csproj.CoreCompileInputs.cache
+C:\Users\usuario\Desktop\Mail\EnvioMails\FormEnvioMails\obj\Debug\FormEnvioMails.exe
+C:\Users\usuario\Desktop\Mail\EnvioMails\FormEnvioMails\obj\Debug\FormEnvioMails.pdb
