@@ -21,7 +21,6 @@ namespace PruebaConsola
             var cuerpo =  Console.ReadLine();
             Dato dato = new Dato(origen, pass, asunto, cuerpo, cuerpo);
             Proceso proceso = new Proceso();
-            proceso.Inicializar();
             proceso.Iniciar(dato);
         }
     }

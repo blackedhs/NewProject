@@ -13,21 +13,26 @@ namespace EnvioMails
         public string Destino { get; set; }
         public bool Enviado { get; set; }
         public string Motivo { get; set; }
-        private static bool CambioMail { get; set; }
-        public Mail(string origen, string clave, string asunto, string cuerpo, Object adjunto, string destino, bool cambioMail) : this(destino)
+        private static int CambioMail { get; set; }
+        public Mail(string origen, string clave, string asunto, string cuerpo, Object adjunto, string destino, bool cambioMail) : this(destino, cambioMail)
         {
-            if (cambioMail)
+            if (CambioMail == 0)
             {
                 Dato = new Dato(origen, clave, asunto, cuerpo, adjunto);
                 this.From = new MailAddress(origen);
                 this.Subject = asunto;
                 this.Body = cuerpo;
+                CambioMail = 1;
                 return;
             }
             this.Motivo = string.Empty;
         }
-        private Mail(string destino)
+        private Mail(string destino, bool cambioMail)
         {
+            if (cambioMail)
+                CambioMail = 0;
+
+
             this.To.Add(new MailAddress(destino));
             this.Enviado = false;
         }

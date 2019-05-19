@@ -11,26 +11,17 @@ namespace EnvioMails
     public class Proceso
     {
         public static List<string> ListaContactos { get; set; }
-        public Dato DatosIniciales { get; set; }
-        public void Inicializar()
-        {
-            ListaContactos = new List<string>();
-        }
+
         public bool Iniciar(Dato dato)
         {
             try
             {
-                //listaContactos.Add("rodrigoebravo@hotmail.com");
-                //listaContactos.Add("rodrigoebravo@hotmail.com");
-                //listaContactos.Add("rodrigoebravo07@gmail.com");
-                //ListaContactos.Add("eliorodrigobravo@gmail.com");
                 CargarContactos();
                 foreach (var mail in ListaContactos)
                 {
-                    var m = new Mail(dato.Origen, dato.Clave, dato.Asunto, dato.Cuerpo, dato.Adjunto, mail,true);
+                    var m = new Mail(dato.Origen, dato.Clave, dato.Asunto, dato.Cuerpo, dato.Adjunto, mail, true);
                     Proceso.EnviarMail(m);
                 }
-                Console.ReadKey();
             }
             catch (Exception ex)
             {
@@ -38,37 +29,33 @@ namespace EnvioMails
             }
             return true;
         }
-
-        private void CargarDatosIniciales()
-        {
-            throw new NotImplementedException();
-        }
-
         private void CargarContactos()
         {
             var path = @"C:\Users\usuario\Desktop\Mail\EnvioMails\EnvioMails\bin\Debug\Datos";
             var pathArchivo = Path.Combine(path, "Contactos.txt");
-            var existe = Directory.Exists(path);
-            if (existe)
-                using (StreamReader archivo = new StreamReader(pathArchivo))
+            ListaContactos = new List<string>();
+            if (!Directory.Exists(path))
+                Directory.CreateDirectory(path);
+            if (!File.Exists(pathArchivo))
+                return;
+            using (StreamReader archivo = new StreamReader(pathArchivo))
+            {
+                while (!archivo.EndOfStream)
                 {
-                    while (!archivo.EndOfStream)
-                    {
-                        var linea = archivo.ReadLine();
-                        if (string.IsNullOrEmpty(linea))
-                            continue;
-                        if (Mail.ValidarMail(linea.Trim()))
-                            ListaContactos.Add(linea.Trim());
-                    }
+                    var linea = archivo.ReadLine();
+                    if (string.IsNullOrEmpty(linea))
+                        continue;
+                    if (Mail.ValidarMail(linea.Trim()))
+                        ListaContactos.Add(linea.Trim());
                 }
-
+            }
         }
 
         public static void EnviarMail(Mail m)
         {
             try
             {
-                SmtpClient client = ObtenerClienteServidor(m);
+                SmtpClient client = ObtenerCliente(m);
                 client.Send(m);
                 m.Enviado = true;
             }
@@ -78,7 +65,7 @@ namespace EnvioMails
             }
         }
 
-        private static SmtpClient ObtenerClienteServidor(Mail m)
+        private static SmtpClient ObtenerCliente(Mail m)
         {
             var EmailOrigen = Mail.Dato.Origen;
             var gmail = EmailOrigen.Contains("gmail");
