@@ -14,17 +14,18 @@ namespace EnvioMails
         public bool Enviado { get; set; }
         public string Motivo { get; set; }
 
-        public Mail(string origen, string clave, string asunto, string cuerpo, Object adjunto, string destino) : this(destino)
+        public Mail(Dato dato, string destino) : this(destino)
         {
 
-            Dato = new Dato(origen, clave, asunto, cuerpo, adjunto);
-            this.From = new MailAddress(origen);
-            this.Subject = asunto;
-            this.Body = cuerpo;
+            Dato = dato;
+            this.From = new MailAddress(Dato.Origen);
+            this.Subject = Dato.Asunto;
+            this.Body = Dato.Cuerpo;
         }
         private Mail(string destino)
         {
             this.To.Add(new MailAddress(destino));
+            this.Destino = destino;
             this.Enviado = false;
             this.Motivo = string.Empty;
         }

@@ -8,3 +8,5 @@ C:\Users\usuario\Desktop\Mail\EnvioMails\FormEnvioMails\obj\Debug\FormEnvioMails
 C:\Users\usuario\Desktop\Mail\EnvioMails\FormEnvioMails\obj\Debug\FormEnvioMails.csproj.CoreCompileInputs.cache
 C:\Users\usuario\Desktop\Mail\EnvioMails\FormEnvioMails\obj\Debug\FormEnvioMails.exe
 C:\Users\usuario\Desktop\Mail\EnvioMails\FormEnvioMails\obj\Debug\FormEnvioMails.pdb
+C:\Users\usuario\Desktop\Mail\EnvioMails\FormEnvioMails\bin\Debug\EnvioMails.dll
+C:\Users\usuario\Desktop\Mail\EnvioMails\FormEnvioMails\bin\Debug\EnvioMails.pdb

@@ -19,8 +19,8 @@ namespace EnvioMails
                 CargarContactos();
                 foreach (var destino in ListaContactos)
                 {
-                    var m = new Mail(dato.Origen, dato.Clave, dato.Asunto, dato.Cuerpo, dato.Adjunto, destino);
-                    //Proceso.EnviarMail(m);
+                    var m = new Mail(dato, destino);
+                    Proceso.EnviarMail(m);
                 }
             }
             catch (Exception ex)
@@ -55,34 +55,31 @@ namespace EnvioMails
         {
             try
             {
-                SmtpClient client = ObtenerCliente(m);
+                SmtpClient client = ObtenerCliente(ref m);
                 client.Send(m);
                 m.Enviado = true;
             }
             catch (Exception ex)
             {
-                throw new Exception("Contraseña inválida");
+                ex = new Exception("Contraseña inválida");
+                throw ex;
             }
         }
 
-        private static SmtpClient ObtenerCliente(Mail m)
+        private static SmtpClient ObtenerCliente(ref Mail m)
         {
             var EmailOrigen = Mail.Dato.Origen;
             var gmail = EmailOrigen.Contains("gmail");
             var outlook = EmailOrigen.Contains("outlook") ? true : EmailOrigen.Contains("hotmail") ? true : false;
-            var cliente = new SmtpClient();
-            cliente.Port = 25;
-            /*
-                Nombre de servidor: smtp.office365.com
-                Puerto: 587
-                Método de cifrado: STARTTLS
-             */
-            cliente.Host = gmail ? "smtp.gmail.com" : outlook ? "smtp.office365.com" : throw new Exception("Mail incorrecto");
-            cliente.Timeout = 10000;
-            cliente.DeliveryMethod = SmtpDeliveryMethod.Network;
-            cliente.EnableSsl = true;
-            cliente.Credentials = new System.Net.NetworkCredential(m.To.ToString(), Mail.Dato.Clave);
-            return cliente;
+
+            SmtpClient client = new SmtpClient();
+            client.Port = 25;
+            client.Host = gmail ? "smtp.gmail.com" : outlook ? "smtp.office365.com" : throw new Exception("Mail incorrecto");
+            client.Timeout = 10000;
+            client.DeliveryMethod = SmtpDeliveryMethod.Network;
+            client.EnableSsl = true;
+            client.Credentials = new System.Net.NetworkCredential(EmailOrigen, Mail.Dato.Clave);
+            return client;
         }
     }
 }
