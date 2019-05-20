@@ -31,13 +31,13 @@ namespace EnvioMails
         }
         private void CargarContactos()
         {
-            var path = @"C:\Users\usuario\Desktop\Mail\EnvioMails\EnvioMails\bin\Debug\Datos";
+            var path = Path.Combine(Directory.GetCurrentDirectory(), "Datos");
             var pathArchivo = Path.Combine(path, "Contactos.txt");
             ListaContactos = new List<string>();
             if (!Directory.Exists(path))
                 Directory.CreateDirectory(path);
             if (!File.Exists(pathArchivo))
-                return;
+                throw new Exception("No existe archivo");
             using (StreamReader archivo = new StreamReader(pathArchivo))
             {
                 while (!archivo.EndOfStream)
@@ -74,7 +74,9 @@ namespace EnvioMails
 
             SmtpClient client = new SmtpClient();
             client.Port = 25;
-            client.Host = gmail ? "smtp.gmail.com" : outlook ? "smtp.office365.com" : throw new Exception("Mail incorrecto");
+            client.Host = gmail ? "smtp.gmail.com" : outlook ? "smtp.office365.com" : string.Empty;
+            if(string.IsNullOrEmpty(client.Host))
+                throw new Exception("Mail incorrecto");
             client.Timeout = 10000;
             client.DeliveryMethod = SmtpDeliveryMethod.Network;
             client.EnableSsl = true;

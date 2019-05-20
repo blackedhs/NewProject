@@ -4,3 +4,8 @@ C:\Users\usuario\Desktop\Mail\EnvioMails\EnvioMails\obj\Debug\Entidades.csprojRe
 C:\Users\usuario\Desktop\Mail\EnvioMails\EnvioMails\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
 C:\Users\usuario\Desktop\Mail\EnvioMails\EnvioMails\obj\Debug\EnvioMails.dll
 C:\Users\usuario\Desktop\Mail\EnvioMails\EnvioMails\obj\Debug\EnvioMails.pdb
+D:\Users\rbravo\Escritorio\NewProject\EnvioMails\EnvioMails\obj\Debug\Entidades.csprojResolveAssemblyReference.cache
+D:\Users\rbravo\Escritorio\NewProject\EnvioMails\EnvioMails\obj\Debug\EnvioMails.dll
+D:\Users\rbravo\Escritorio\NewProject\EnvioMails\EnvioMails\obj\Debug\EnvioMails.pdb
+D:\Users\rbravo\Escritorio\NewProject\EnvioMails\EnvioMails\bin\Debug\EnvioMails.dll
+D:\Users\rbravo\Escritorio\NewProject\EnvioMails\EnvioMails\bin\Debug\EnvioMails.pdb

@@ -10,3 +10,14 @@ C:\Users\usuario\Desktop\Mail\EnvioMails\FormEnvioMails\obj\Debug\FormEnvioMails
 C:\Users\usuario\Desktop\Mail\EnvioMails\FormEnvioMails\obj\Debug\FormEnvioMails.pdb
 C:\Users\usuario\Desktop\Mail\EnvioMails\FormEnvioMails\bin\Debug\EnvioMails.dll
 C:\Users\usuario\Desktop\Mail\EnvioMails\FormEnvioMails\bin\Debug\EnvioMails.pdb
+D:\Users\rbravo\Escritorio\NewProject\EnvioMails\FormEnvioMails\bin\Debug\FormEnvioMails.exe.config
+D:\Users\rbravo\Escritorio\NewProject\EnvioMails\FormEnvioMails\bin\Debug\FormEnvioMails.exe
+D:\Users\rbravo\Escritorio\NewProject\EnvioMails\FormEnvioMails\bin\Debug\FormEnvioMails.pdb
+D:\Users\rbravo\Escritorio\NewProject\EnvioMails\FormEnvioMails\bin\Debug\EnvioMails.dll
+D:\Users\rbravo\Escritorio\NewProject\EnvioMails\FormEnvioMails\bin\Debug\EnvioMails.pdb
+D:\Users\rbravo\Escritorio\NewProject\EnvioMails\FormEnvioMails\obj\Debug\FormEnvioMails.csprojResolveAssemblyReference.cache
+D:\Users\rbravo\Escritorio\NewProject\EnvioMails\FormEnvioMails\obj\Debug\FormEnvioMails.FormPrincipal.resources
+D:\Users\rbravo\Escritorio\NewProject\EnvioMails\FormEnvioMails\obj\Debug\FormEnvioMails.Properties.Resources.resources
+D:\Users\rbravo\Escritorio\NewProject\EnvioMails\FormEnvioMails\obj\Debug\FormEnvioMails.csproj.GenerateResource.Cache
+D:\Users\rbravo\Escritorio\NewProject\EnvioMails\FormEnvioMails\obj\Debug\FormEnvioMails.exe
+D:\Users\rbravo\Escritorio\NewProject\EnvioMails\FormEnvioMails\obj\Debug\FormEnvioMails.pdb
